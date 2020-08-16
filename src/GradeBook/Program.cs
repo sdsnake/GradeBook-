@@ -9,8 +9,8 @@ namespace GradeBook
             double[] numbers = new[] { 12.7, 12.7, 12.7, 12.7 };
 
             double result = numbers[0];
-            result = result + numbers[1];
-            result = result + numbers[2];
+            result += numbers[1];
+            result += numbers[2];
             Console.WriteLine(result);
 
             if (args.Length > 0)
