@@ -7,10 +7,11 @@ namespace GradeBook
         static void Main(string[] args)
         {
             double[] numbers = new[] { 12.7, 12.7, 12.7, 12.7 };
-
-            double result = numbers[0];
-            result += numbers[1];
-            result += numbers[2];
+            double result = 0.0;
+            foreach (double number in numbers)
+            {
+                result += number;
+            }
             Console.WriteLine(result);
 
             if (args.Length > 0)
