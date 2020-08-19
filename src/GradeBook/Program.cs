@@ -11,7 +11,11 @@ namespace GradeBook
             book.AddGrade(12.3);
             book.AddGrade(15.3);
             book.AddGrade(17.3);
-            book.showStatistics();
+            var AverageResult = book.GetAverageGrade();
+            var HighResult = book.GetHighestGrade();
+            var LowResult = book.GetLowestGrade();
+            Console.WriteLine($"The average grade is {AverageResult.Average:N1}.\n The maximum is {HighResult.High}. \n The lowest is {LowResult.Low}.");
+
         }
     }
 }

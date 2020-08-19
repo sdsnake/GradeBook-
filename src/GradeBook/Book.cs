@@ -16,44 +16,41 @@ namespace GradeBook
             grades.Add(grade);
         }
 
-        public double LowestGrade()
+        public Statistics GetLowestGrade()
         {
-            this.lowGrade = double.MaxValue;
-            foreach (double number in this.grades)
+            var result = new Statistics();
+            result.Low = double.MaxValue;
+            foreach (double grade in this.grades)
             {
-                this.lowGrade = Math.Min(number, this.lowGrade);
+                result.Low = Math.Min(grade, result.Low);
             }
-            return this.lowGrade;
+            return result;
         }
 
-        public double HighestGrade()
+        public Statistics GetHighestGrade()
         {
-            this.highGrade = double.MinValue;
-            foreach (double number in this.grades)
+            var result = new Statistics();
+            result.High = double.MinValue;
+            foreach (double grade in this.grades)
             {
-                this.highGrade = Math.Max(number, this.highGrade);
+                result.High = Math.Max(grade, result.High);
             }
-            return highGrade;
+            return result;
         }
 
-        public double AverageGrade()
+        public Statistics GetAverageGrade()
         {
-            foreach (double number in this.grades)
+            var result = new Statistics();
+            result.Average = 0.0;
+            foreach (double grade in this.grades)
             {
-                this.result += number;
+                result.Average += grade;
             }
-            return this.result /= grades.Count;
+            result.Average /= grades.Count;
+            return result;
         }
 
-        public void showStatistics()
-        {
-            Console.WriteLine($"The average grade is {this.AverageGrade():N1}.\n The maximum is {this.HighestGrade()}. \n The lowest is {this.LowestGrade()}.");
-
-        }
         private List<double> grades;
-        private double result;
         private string name;
-        private double highGrade;
-        private double lowGrade;
     }
 }
