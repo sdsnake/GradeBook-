@@ -1,5 +1,6 @@
 using System;
 using Xunit;
+using GradeBook.Book;
 
 namespace GradeBook.tests
 {
@@ -8,12 +9,16 @@ namespace GradeBook.tests
         [Fact]
         public void Test1()
         {
-            var x = 5;
-            var y = 2;
-            var expected = 7;
+            //arrange
+            var book = new Book("");
+            book.AddGrade(12.7);
+            book.AddGrade(14);
+            book.AddGrade(14.5);
+            // act
+            var result = book.showStatistics();
+            //assert 
+            Assert.Equal(78, result.Average)
 
-            var actual = x + y;
-            Assert.Equal(expected, actual);
         }
     }
 }
