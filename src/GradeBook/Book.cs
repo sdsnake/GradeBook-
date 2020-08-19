@@ -15,7 +15,20 @@ namespace GradeBook
             grades.Add(grade);
         }
 
+        public void LowestGrade()
+        {
+        }
+
+        public void HighestGrade()
+        {
+        }
+
+        public double AverageGrade()
+        {
+            return this.result /= grades.Count;
+        }
         private List<double> grades;
+        private double result;
         private string name;
     }
 }
