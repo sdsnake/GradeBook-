@@ -7,7 +7,23 @@ namespace GradeBook.tests
 
     {
         [Fact]
-        public void Test1()
+        public void SetNameTestCopyObject()
+        {
+            //arrange
+            var book = GetBook("Book 1");
+            SetNameGetBook(book, "New Name");
+
+            Assert.Equal("New Name", book.Name);
+
+        }
+
+        private void SetNameGetBook(Book book, string name)
+        {
+            book = new Book(name);
+        }
+
+        [Fact]
+        public void SetNameTestPointingVariable()
         {
             //arrange
             var book = GetBook("Book 1");
