@@ -94,3 +94,6 @@ C:\Said\plurals\chap2\gradebook\test\GradeBook.tests\obj\Debug\netcoreapp3.1\Gra
 C:\Said\plurals\chap2\gradebook\test\GradeBook.tests\obj\Debug\netcoreapp3.1\GradeBook.tests.dll
 C:\Said\plurals\chap2\gradebook\test\GradeBook.tests\obj\Debug\netcoreapp3.1\GradeBook.tests.pdb
 C:\Said\plurals\chap2\gradebook\test\GradeBook.tests\obj\Debug\netcoreapp3.1\GradeBook.tests.genruntimeconfig.cache
+C:\Said\plurals\chap2\gradebook\test\GradeBook.tests\bin\Debug\netcoreapp3.1\GradeBook.exe
+C:\Said\plurals\chap2\gradebook\test\GradeBook.tests\bin\Debug\netcoreapp3.1\GradeBook.dll
+C:\Said\plurals\chap2\gradebook\test\GradeBook.tests\bin\Debug\netcoreapp3.1\GradeBook.pdb
