@@ -7,6 +7,22 @@ namespace GradeBook.tests
 
     {
         [Fact]
+        public void Test1()
+        {
+            //arrange
+            var book = GetBook("Book 1");
+            setName(book, "New Name");
+
+            Assert.Equal("New Name", book.Name);
+
+        }
+
+        public string setName(Book book, string newName)
+        {
+            return book.Name = newName;
+        }
+
+        [Fact]
         public void GetBookReturnDifferentObjects()
         {
             //arrange
