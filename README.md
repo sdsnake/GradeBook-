@@ -1,7 +1,7 @@
 # GradeBook-
 C# console application to calculate average maximum minimum grades.
 
-prerequisite : Dotnet Core dsk
+prerequisite : Dotnet Core sdk
 
 download link : https://dotnet.microsoft.com/download
 
