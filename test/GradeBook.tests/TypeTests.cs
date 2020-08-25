@@ -115,5 +115,14 @@ namespace GradeBook.tests
         {
             return name.ToUpper();
         }
+
+        [Fact]
+        public void validValueForCalcul()
+        {
+            var book = new Book("testing value");
+            book.AddGrade(344);
+
+            Assert.DoesNotContain(344, book.getGrades());
+        }
     }
 }
