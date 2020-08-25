@@ -7,13 +7,48 @@ namespace GradeBook.tests
 
     {
         [Fact]
+        public void ValueTypeAlsoPassByValue()
+        {
+            var x = GetInt();
+            setInt(ref x);
+
+            Assert.Equal(42, x);
+        }
+
+        private void setInt(ref int x)
+        {
+            x = 42;
+        }
+
+        private int GetInt()
+        {
+            return 3;
+        }
+
+        [Fact]
+        public void SetNameTestByRefObject()
+        {
+            //arrange
+            var book = GetBook("Book 1");
+            SetNameGetBookByRef(out book, "New Name");
+
+            Assert.Equal("New Name", book.Name);
+
+        }
+
+        private void SetNameGetBookByRef(out Book book, string name)
+        {
+            book = new Book(name);
+        }
+
+        [Fact]
         public void SetNameTestCopyObject()
         {
             //arrange
             var book = GetBook("Book 1");
             SetNameGetBook(book, "New Name");
 
-            Assert.Equal("New Name", book.Name);
+            Assert.Equal("Book 1", book.Name);
 
         }
 
@@ -65,6 +100,20 @@ namespace GradeBook.tests
         Book GetBook(string name)
         {
             return new Book(name);
+        }
+
+        [Fact]
+        public void StringsBehaveLikeValueTypes()
+        {
+            string name = "Scott";
+            var upper = MakeUpperCase(name);
+            Assert.Equal("Scott", name);
+            Assert.Equal("SCOTT", upper);
+        }
+
+        private string MakeUpperCase(string name)
+        {
+            return name.ToUpper();
         }
     }
 }
