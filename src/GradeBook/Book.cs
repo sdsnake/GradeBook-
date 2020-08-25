@@ -11,6 +11,32 @@ namespace GradeBook
             grades = new List<double>();
             Name = name;
         }
+
+        public void AddLetterGrade(char letter)
+        {
+            switch (letter)
+            {
+                case 'A':
+                    AddGrade(20);
+                    break;
+                case 'B':
+                    AddGrade(16);
+                    break;
+                case 'C':
+                    AddGrade(13);
+                    break;
+                case 'E':
+                    AddGrade(9);
+                    break;
+                case 'F':
+                    AddGrade(5);
+                    break;
+                default:
+                    AddGrade(0);
+                    break;
+            }
+
+        }
         public void AddGrade(double grade)
         {
             if (grade <= 100 && grade >= 0)
