@@ -9,29 +9,24 @@ namespace GradeBook
         {
             var book = new Book("Said Grade Book");
 
-            for (var index = 0; index >= 0; index++)
+            while (true)
             {
-                Console.WriteLine("Hi enter grade for calcultation :");
+                Console.WriteLine("Hi enter grade for calcultation or 'q' to quit:");
                 var input = Console.ReadLine();
-                var grade = double.Parse(input);
-                book.AddGrade(grade);
-                Console.WriteLine("Are you finish? (y to stop n or other to continue)");
-                var askingContinue = Console.ReadLine();
-                if (askingContinue == "y")
+
+                if (input == "q")
                 {
                     break;
                 }
-                else
-                {
-                    continue;
-                }
+                var grade = double.Parse(input);
+                book.AddGrade(grade);
 
             }
 
-            var AverageResult = book.GetAverageGrade();
+            var AverageAndLetterResult = book.GetLetterAndAverageGrade();
             var HighResult = book.GetHighestGrade();
             var LowResult = book.GetLowestGrade();
-            Console.WriteLine($"The average grade is {AverageResult.Average:N1}.\n The maximum is {HighResult.High}. \n The lowest is {LowResult.Low}.");
+            Console.WriteLine($"The average grade is {AverageAndLetterResult.Average:N1}.\n The maximum is {HighResult.High}. \n The lowest is {LowResult.Low}. The letter grade is {AverageAndLetterResult.Letter}.");
 
         }
     }

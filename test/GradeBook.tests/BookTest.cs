@@ -14,7 +14,7 @@ namespace GradeBook.tests
             book.AddGrade(14);
             book.AddGrade(14.5);
             // act
-            var AverageResult = book.GetAverageGrade();
+            var AverageResult = book.GetLetterAndAverageGrade();
             var HighResult = book.GetHighestGrade();
             var LowResult = book.GetLowestGrade();
             //assert 

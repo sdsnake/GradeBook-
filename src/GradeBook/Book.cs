@@ -72,7 +72,7 @@ namespace GradeBook
             return result;
         }
 
-        public Statistics GetAverageGrade()
+        public Statistics GetLetterAndAverageGrade()
         {
             var result = new Statistics();
             result.Average = 0.0;
