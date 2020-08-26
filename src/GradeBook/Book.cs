@@ -81,6 +81,28 @@ namespace GradeBook
                 result.Average += grade;
             }
             result.Average /= grades.Count;
+
+            switch (result.Average)
+            {
+                case var d when d >= 18:
+                    result.Letter = 'A';
+                    break;
+                case var d when d >= 14:
+                    result.Letter = 'B';
+                    break;
+                case var d when d >= 10:
+                    result.Letter = 'C';
+                    break;
+                case var d when d >= 8:
+                    result.Letter = 'D';
+                    break;
+                case var d when d >= 8:
+                    result.Letter = 'D';
+                    break;
+                default:
+                    result.Letter = 'F';
+                    break;
+            }
             return result;
         }
 

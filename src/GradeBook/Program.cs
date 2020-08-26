@@ -8,9 +8,26 @@ namespace GradeBook
         static void Main(string[] args)
         {
             var book = new Book("Said Grade Book");
-            book.AddGrade(12.3);
-            book.AddGrade(15.3);
-            book.AddGrade(17.3);
+
+            for (var index = 0; index >= 0; index++)
+            {
+                Console.WriteLine("Hi enter grade for calcultation :");
+                var input = Console.ReadLine();
+                var grade = double.Parse(input);
+                book.AddGrade(grade);
+                Console.WriteLine("Are you finish? (y to stop n or other to continue)");
+                var askingContinue = Console.ReadLine();
+                if (askingContinue == "y")
+                {
+                    break;
+                }
+                else
+                {
+                    continue;
+                }
+
+            }
+
             var AverageResult = book.GetAverageGrade();
             var HighResult = book.GetHighestGrade();
             var LowResult = book.GetLowestGrade();
