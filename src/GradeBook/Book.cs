@@ -45,7 +45,7 @@ namespace GradeBook
             }
             else
             {
-                Console.WriteLine("Invalid Value");
+                throw new ArgumentException($"Invalid value for {nameof(grade)}.");
             }
 
         }
@@ -111,6 +111,19 @@ namespace GradeBook
             return grades;
         }
         private List<double> grades;
-        public string Name;
+
+        public string Name
+        {
+            get
+            {
+                return name.ToUpper();
+            }
+            set
+            {
+                if (!String.IsNullOrEmpty(value))
+                    name = value;
+            }
+        }
+        private string name;
     }
 }
