@@ -39,7 +39,7 @@ namespace GradeBook
         }
         public void AddGrade(double grade)
         {
-            if (grade <= 100 && grade >= 0)
+            if (grade <= 20 && grade >= 0)
             {
                 grades.Add(grade);
             }
@@ -115,7 +115,7 @@ namespace GradeBook
         public string Name
         {
             get;
-            private set;
+            set;
         }
 
         public const string CATEGORY = "Science";
