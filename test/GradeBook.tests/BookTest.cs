@@ -3,8 +3,33 @@ using Xunit;
 
 namespace GradeBook.tests
 {
+    public delegate string WriteLogDelegate(string logMessage);
     public class BookTests
     {
+        int count = 0;
+
+        [Fact]
+        public void WriteLogDelegateCanPointToMethod()
+        {
+            WriteLogDelegate log = ReturnMessage;
+            log += ReturnMessage;
+            log += IncrementCount;
+            var result = log("Go delegate!");
+            Assert.Equal("Go delegate!", result);
+            Assert.Equal(3, count);
+        }
+
+        string IncrementCount(string message)
+        {
+            count++;
+            return message;
+        }
+        string ReturnMessage(string message)
+        {
+            count++;
+            return message;
+        }
+
         [Fact]
         public void BookCalculationAndAverageTest()
         {

@@ -6,6 +6,7 @@ namespace GradeBook
 {
     public class Book
     {
+        public delegate void GradeBookDelegate(Object sender, EventArgs args);
         public Book(string name)
         {
             grades = new List<double>();
@@ -42,6 +43,10 @@ namespace GradeBook
             if (grade <= 20 && grade >= 0)
             {
                 grades.Add(grade);
+                if (GradeAdded != null)
+                {
+                    GradeAdded(this, new EventArgs());
+                }
             }
             else
             {
@@ -50,6 +55,7 @@ namespace GradeBook
 
         }
 
+        public event GradeBookDelegate GradeAdded;
         public Statistics GetLowestGrade()
         {
             var result = new Statistics();

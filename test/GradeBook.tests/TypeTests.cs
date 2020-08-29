@@ -120,9 +120,9 @@ namespace GradeBook.tests
         public void validValueForCalcul()
         {
             var book = new Book("testing value");
-            book.AddGrade(344);
+            book.AddGrade(19);
 
-            Assert.DoesNotContain(344, book.getGrades());
+            Assert.Contains(19, book.getGrades());
         }
     }
 }

@@ -8,6 +8,7 @@ namespace GradeBook
         static void Main(string[] args)
         {
             var book = new Book("Said Grade Book");
+            book.GradeAdded += ReturnMessageOnGradded;
 
             while (true)
             {
@@ -46,6 +47,11 @@ namespace GradeBook
             Console.WriteLine($"For the book named {book.Name}");
             Console.WriteLine($"The average grade is {AverageAndLetterResult.Average:N1}.\n The maximum is {HighResult.High}. \n The lowest is {LowResult.Low}. \n The letter grade is {AverageAndLetterResult.Letter}.");
 
+        }
+
+        static void ReturnMessageOnGradded(object sender, EventArgs e)
+        {
+            Console.WriteLine("Grade added!");
         }
     }
 }
