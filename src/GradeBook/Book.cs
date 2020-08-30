@@ -4,10 +4,10 @@ using System.Collections.Generic;
 
 namespace GradeBook
 {
-    public class Book
+    public class Book : NamedObject
     {
         public delegate void GradeBookDelegate(Object sender, EventArgs args);
-        public Book(string name)
+        public Book(string name) : base(name)
         {
             grades = new List<double>();
             Name = name;
@@ -117,12 +117,6 @@ namespace GradeBook
             return grades;
         }
         private List<double> grades;
-
-        public string Name
-        {
-            get;
-            set;
-        }
 
         public const string CATEGORY = "Science";
     }
