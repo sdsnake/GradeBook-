@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-
 namespace GradeBook
 {
     class Program
@@ -21,7 +19,7 @@ namespace GradeBook
 
         }
 
-        private static void EnterGrades(InMemoryBook book)
+        private static void EnterGrades(Ibook book)
         {
             while (true)
             {
