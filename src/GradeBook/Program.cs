@@ -7,9 +7,22 @@ namespace GradeBook
     {
         static void Main(string[] args)
         {
-            var book = new Book("Said Grade Book");
+            var book = new InMemoryBook("Said Grade Book");
             book.GradeAdded += ReturnMessageOnGradded;
 
+            EnterGrades(book);
+
+            var AverageAndLetterResult = book.GetLetterAndAverageGrade();
+            var HighResult = book.GetHighestGrade();
+            var LowResult = book.GetLowestGrade();
+            Console.WriteLine(InMemoryBook.CATEGORY);
+            Console.WriteLine($"For the book named {book.Name}");
+            Console.WriteLine($"The average grade is {AverageAndLetterResult.Average:N1}.\n The maximum is {HighResult.High}. \n The lowest is {LowResult.Low}. \n The letter grade is {AverageAndLetterResult.Letter}.");
+
+        }
+
+        private static void EnterGrades(InMemoryBook book)
+        {
             while (true)
             {
                 Console.WriteLine("Hi enter grade for calcultation or 'q' to quit:");
@@ -39,14 +52,6 @@ namespace GradeBook
                     Console.WriteLine("***");
                 }
             }
-
-            var AverageAndLetterResult = book.GetLetterAndAverageGrade();
-            var HighResult = book.GetHighestGrade();
-            var LowResult = book.GetLowestGrade();
-            Console.WriteLine(Book.CATEGORY);
-            Console.WriteLine($"For the book named {book.Name}");
-            Console.WriteLine($"The average grade is {AverageAndLetterResult.Average:N1}.\n The maximum is {HighResult.High}. \n The lowest is {LowResult.Low}. \n The letter grade is {AverageAndLetterResult.Letter}.");
-
         }
 
         static void ReturnMessageOnGradded(object sender, EventArgs e)
