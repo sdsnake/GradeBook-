@@ -1,5 +1,5 @@
 # GradeBook-
-C# console application to calculate average maximum minimum grades.
+C# console application to calculate average maximum minimum grades. This project allowed me to familiarize myself with the C # syntax and TDD method.
 
 prerequisite : Dotnet Core sdk
 
